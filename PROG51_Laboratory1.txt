@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double score1, score2, score3, score4, score5;
+    double highest;
+
+    cout << "Enter score 1: ";
+    cin >> score1;
+    cout << "Enter score 2: ";
+    cin >> score2;
+    cout << "Enter score 3: ";
+    cin >> score3;
+    cout << "Enter score 4: ";
+    cin >> score4;
+    cout << "Enter score 5: ";
+    cin >> score5;
+
+    if (score1 >= score2 && score1 >= score3 && score1 >= score4 && score1 >= score5) {
+        highest = score1;
+    } else if (score2 >= score1 && score2 >= score3 && score2 >= score4 && score2 >= score5) {
+        highest = score2;
+    } else if (score3 >= score1 && score3 >= score2 && score3 >= score4 && score3 >= score5) {
+        highest = score3;
+    } else if (score4 >= score1 && score4 >= score2 && score4 >= score3 && score4 >= score5) {
+        highest = score4;
+    } else {
+        highest = score5;
+    }
+
+    cout << "\nThe highest score is: " << highest << endl;
+    return 0;
+}
