@@ -3,9 +3,9 @@
 using namespace std;
 
 int main() {
-    string item, inventory;
+    string item, inventory = "";
     int quantity, choice;
-    double price, subtotal, amount;
+    double price, subtotal, amount = 0;
    
     cout << "===== PATRICIA'S INVENTORY SYSTEM =====" << endl;
 
@@ -40,11 +40,14 @@ int main() {
                     subtotal = quantity * price;
                     amount = amount + subtotal;
 
-                    inventory = inventory + item + "          ";
+                    inventory = inventory + item + "\t\t"
+                             + to_string(quantity) + "\t\t"
+                             + to_string(price) + "\t\t"
+                             + to_string(subtotal) + "\n";
 
+		    cout << endl;
                     cout << "Subtotal: " << subtotal << endl;
-
-                    cout << "Item successfully added!" << endl;
+                    cout << "Item Added!" << endl;
                 }
                 else {
                     cout << "Invalid input!" << endl;
@@ -55,17 +58,15 @@ int main() {
             case 2:
             cout << "\n===== VIEW ITEMS =====" << endl;
             cout << "Item Name\tQty    \tPrice\tSubtotal" << endl;
-            cout << item << "\t\t";
-            cout << quantity << "\t\t";
-            cout << price << "\t\t";
-            cout<< quantity * price << endl;
-
-                if (inventory == "") {
+            if (inventory == "") {
                     cout << "No items available." << endl;
                 }
                 else {
-                    cout << inventory << endl;
+                    cout << inventory;
                 }
+
+                cout << endl;
+                break;
 
             cout << endl;
             break;
