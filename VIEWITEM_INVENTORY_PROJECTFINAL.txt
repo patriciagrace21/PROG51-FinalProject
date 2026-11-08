@@ -1,0 +1,78 @@
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    string item, inventory;
+    int quantity, choice;
+    double price, subtotal, amount;
+   
+    cout << "===== PATRICIA'S INVENTORY SYSTEM =====" << endl;
+
+    do {
+        cout << "    ----- INVENTORY MENU -----" << endl;
+        cout << "1. Add Items" << endl;
+        cout << "2. View Items" << endl;
+        cout << "3. Show Total Value" << endl;
+        cout << "0. Exit" << endl;
+
+        cout << endl;
+        cout << "Enter your Choice: ";
+        cin >> choice;
+        cout << endl;
+
+
+        switch (choice) {
+
+            case 1:
+    
+            cout << "===== ADD ITEM =====" << endl;
+            cout << "Enter Item Name: ";
+            cin >> item;
+    
+            cout << "Enter Quantity: ";
+            cin >> quantity;
+    
+            cout << "Enter Price: ";
+            cin >> price;
+
+            if (quantity > 0 && price > 0) {
+                    subtotal = quantity * price;
+                    amount = amount + subtotal;
+
+                    inventory = inventory + item + "          ";
+
+                    cout << "Subtotal: " << subtotal << endl;
+
+                    cout << "Item successfully added!" << endl;
+                }
+                else {
+                    cout << "Invalid input!" << endl;
+                }
+            cout << endl;
+            break;
+
+            case 2:
+            cout << "\n===== VIEW ITEMS =====" << endl;
+            cout << "Item Name\tQty    \tPrice\tSubtotal" << endl;
+            cout << item << "\t\t";
+            cout << quantity << "\t\t";
+            cout << price << "\t\t";
+            cout<< quantity * price << endl;
+
+                if (inventory == "") {
+                    cout << "No items available." << endl;
+                }
+                else {
+                    cout << inventory << endl;
+                }
+
+            cout << endl;
+            break;
+        }
+            
+    } while (choice != 2);
+
+    return 0;
+}
+    
